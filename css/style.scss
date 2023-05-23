@@ -7,10 +7,24 @@
   src: url("../fonts/CordaleCorp-Regular.woff") format("woff"),
 }
 
+@font-face {
+  font-family: "BerlingT";
+  src: url("../fonts/BerlingNovaSans-Regular.ttf");
+  src: url("../fonts/BerlingNovaSans-Regular.woff") format("woff"),
+}
+
 body {
   background-color: $bodyColor;
   width: 100%;
   overflow-x: hidden;
-  font-family: 'CordaleCorp';
+  font-family: $primaryFont;
+  font-size: $bodySize;
+  margin: 0;
+}
+
+// The Hero Area
+.section-hero-banner {
+  background-image: url('../images/TheHeroArea.png');
+  @include backgroundImage;
 }
 

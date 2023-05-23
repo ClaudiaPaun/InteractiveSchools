@@ -6,7 +6,7 @@ let marketing = {
         let itemsMarketing = ""
         const truncateContent = (string = '', maxLength = 50) => string.length > maxLength ? `${string.substring(0, maxLength)}…`: string
         marketingItems.forEach(item => {
-            itemsMarketing += "<div class='content_slide-marketing'>" + truncateContent(item.title) + " / " + truncateContent(item.description, 60) + "</div>";
+            itemsMarketing += "<div class='content_slide-marketing'>" + truncateContent(item.title) + " /" + truncateContent(item.description, 60) + "</div>";
         })
 
         document.getElementById('marketingCarousel').innerHTML = itemsMarketing

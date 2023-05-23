@@ -1,1 +1,28 @@
+// fonts
+$primaryFont: "BerlingT", Arial, sans-serif;
+$secondaryFont: "CordaleCorp", Arial, sans-serif;
+
+
+// colors
 $bodyColor: #ffffff;
+$black: #000000;
+$primary: #B3995D;
+$secondary: #002664;
+$light: #9A9B9C;
+$dark: #001332;
+
+// font size
+$bodySize: 14px;
+$fs-1: 90px;
+$fs-2: 80px;
+$fs-3: 50px;
+$fs-4: 40px;
+$fs-5: 28px;
+$display-1: 18px;
+
+// mixin
+@mixin backgroundImage($position: center center) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: $position;
+}

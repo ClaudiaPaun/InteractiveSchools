@@ -3,9 +3,23 @@
   src: url("../fonts/CordaleCorp-Regular.ttf");
   src: url("../fonts/CordaleCorp-Regular.woff") format("woff");
 }
+@font-face {
+  font-family: "BerlingT";
+  src: url("../fonts/BerlingNovaSans-Regular.ttf");
+  src: url("../fonts/BerlingNovaSans-Regular.woff") format("woff");
+}
 body {
   background-color: #ffffff;
   width: 100%;
   overflow-x: hidden;
-  font-family: "CordaleCorp";
+  font-family: "BerlingT", Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+
+.section-hero-banner {
+  background-image: url("../images/TheHeroArea.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }/*# sourceMappingURL=style.css.map */
