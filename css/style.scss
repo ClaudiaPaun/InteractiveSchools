@@ -1,0 +1,16 @@
+@import './variables';
+
+// global elements
+@font-face {
+  font-family: "CordaleCorp";
+  src: url("../fonts/CordaleCorp-Regular.ttf");
+  src: url("../fonts/CordaleCorp-Regular.woff") format("woff"),
+}
+
+body {
+  background-color: $bodyColor;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'CordaleCorp';
+}
+

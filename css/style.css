@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "CordaleCorp";
+  src: url("../fonts/CordaleCorp-Regular.ttf");
+  src: url("../fonts/CordaleCorp-Regular.woff") format("woff");
+}
+body {
+  background-color: #ffffff;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "CordaleCorp";
+}/*# sourceMappingURL=style.css.map */
