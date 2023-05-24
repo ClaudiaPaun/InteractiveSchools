@@ -22,9 +22,169 @@ body {
   margin: 0;
 }
 
-// The Hero Area
-.section-hero-banner {
-  background-image: url('../images/TheHeroArea.png');
-  @include backgroundImage;
+.d-none {
+  display: none;
 }
 
+main {
+  overflow: hidden;
+}
+
+.heading-title {
+  font-size: $fs-2;
+  color: $bodyColor;
+  font-family: $secondaryFont;
+  text-transform: capitalize;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: $fs-4;
+  }
+}
+
+.mb-3 {
+  margin-bottom: 15px;
+}
+
+// The Hero Area
+.full-screen {
+  display: block;
+  @include setWH;
+  overflow: hidden;
+}
+
+#panels {
+  #panels-container {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding: 0;
+    overflow: hidden;
+    background-color: $light;
+
+    .panel {
+      background-image: url('../images/TheHeroArea.png');
+      @include backgroundImage;
+      position: relative;
+      @include setWH;
+      overflow: hidden;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      color: $black;
+      justify-content: center;
+      align-items: end;
+      text-align: center;
+
+      &::before {
+        content: "";
+        background: $black;
+        opacity: 0.3;
+        @include absolutePosition;
+        z-index: -1;
+      }
+
+      .step-description {
+        color: $bodyColor;
+        font-size: $display-2;
+        font-weight: bold;
+        line-height: 22px;
+        letter-spacing: 0.4px;
+        text-transform: capitalize;
+        @media (max-width: $breakpoint-tablet) {
+          font-size: $bodySize;
+        }
+      }
+
+      .panels-navigation {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+      }
+
+      .anchor-panel, .nav-panel {
+        color: $black;
+        text-transform: uppercase;
+        margin-right: 2rem;
+      }
+    }
+
+    .panels-navigation {
+      position: absolute;
+      width: 100%;
+      bottom: 2rem;
+      right: 2rem;
+    }    
+  }
+}
+
+.mobile_slider-hero {
+  .panel {
+    background-image: url('../images/TheHeroArea.png');
+    @include backgroundImage;
+    position: relative;
+    width: 100%;
+    height: 100vh!important;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: $black;
+    justify-content: center;
+    align-items: end;
+    text-align: center;
+
+    &::before {
+      content: "";
+      background: $black;
+      opacity: 0.3;
+      @include absolutePosition;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .step-description {
+      color: $bodyColor;
+      font-size: $display-2;
+      font-weight: bold;
+      line-height: 22px;
+      letter-spacing: 0.4px;
+      text-transform: capitalize;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: $bodySize;
+      }
+    }
+  }
+
+  &-column {
+    position: relative;
+  }
+
+  .glider-dots {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: block;
+    .glider-dot {
+      border: 3.5px solid $bodyColor;
+      background: $bodyColor;
+      width: 15px;
+      height: 15px;
+      margin: 10px 8px;
+      &.active {
+        border: 3.5px solid $bodyColor;
+        background: $primary;
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}

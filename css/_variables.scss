@@ -11,7 +11,7 @@ $secondary: #002664;
 $light: #9A9B9C;
 $dark: #001332;
 
-// font size
+// font 
 $bodySize: 14px;
 $fs-1: 90px;
 $fs-2: 80px;
@@ -19,6 +19,9 @@ $fs-3: 50px;
 $fs-4: 40px;
 $fs-5: 28px;
 $display-1: 18px;
+$display-2: 16px;
+
+$font-bold: bold;
 
 // mixin
 @mixin backgroundImage($position: center center) {
@@ -26,3 +29,25 @@ $display-1: 18px;
     background-size: cover;
     background-position: $position;
 }
+
+@mixin setWH {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin dislayFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin absolutePosition {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+// media queries
+$breakpoint-tablet: 991px;
