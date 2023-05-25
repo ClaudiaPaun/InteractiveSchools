@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
     heroArea.initialize();
-    
+
     document.querySelector('.anchor-arrow').addEventListener('click', (e) => {
         document.querySelector('html').style.scrollBehavior = "smooth";
         setTimeout(() => {
             document.querySelector('html').style.scrollBehavior = "auto";
         }, 1000)
-    })
+    });
+
+    simpleListCarousel.initialize();
+
+    swiperSlide.initialize();
 })
 
 // The Hero Area
@@ -131,9 +135,54 @@ let heroArea = {
 }
 
 
+let simpleListCarousel = {
+    initialize() {
+        simpleListCarousel.getsimpleList();
+    },
+
+    getsimpleList() {
+        let itemsList = ""
+        simpleListItem.forEach((item, index) => {
+            itemsList +=  `
+                <div class="swiper-slide" style="background-image: url('${item.image}')">
+                    <div class="content_swiper">
+                        <div class="description">${item.description}</div>
+                        <a href="${item.link}" title="icon" target="_black"><i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+            `
+        })
+
+        document.getElementById('insertList').innerHTML = itemsList
+    },
+}
+
+
+let swiperSlide = {
+    initialize() {
+        swiperSlide.initSwiperSlide();
+    },
+
+    initSwiperSlide() {
+        var galleryTop = new Swiper(".gallery-top", {
+            direction: "vertical",
+            effect: 'slide',
+            spaceBetween: 10,
+            mousewheel: true,
+            keyboard: {
+              enabled: true,
+            },
+        });
+        galleryTop.on("transitionStart", function () {
+            galleryTop.slideTo(galleryTop.activeIndex);
+        });
+    },
+}
 
 
 
+
+  
 
 
 

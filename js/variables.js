@@ -40,3 +40,59 @@ const marketingCollection = [
         description: "Etiam venenatis tempus"
     }
 ]
+
+
+const simpleListItem = [
+    {
+        link: "https://www.interactiveschools.com/",
+        image: "./images/carouselImage.png",
+        description: "Product 1"
+    },
+    {
+        link: "https://www.interactiveschools.com/",
+        image: "./images/TheHeroArea.png",
+        description: "Product 2"
+    },
+    {
+        link: "https://www.interactiveschools.com/",
+        image: "./images/carouselImage.png",
+        description: "Product 3"
+    },
+    {
+        link: "https://www.interactiveschools.com/",
+        image: "./images/carouselImage.png",
+        description: "Product 4"
+    },
+    {
+        link: "https://www.interactiveschools.com/",
+        image: "./images/carouselImage.png",
+        description: "Product 5"
+    },
+    {
+        link: "https://www.interactiveschools.com/",
+        image: "./images/carouselImage.png",
+        description: "Product 6"
+    },
+    {
+        link: "https://www.interactiveschools.com/",
+        image: "./images/carouselImage.png",
+        description: "Product 7"
+    },
+    {
+        link: "https://www.interactiveschools.com/",
+        image: "./images/carouselImage.png",
+        description: "Product 8"
+    },
+    {
+        link: "https://www.interactiveschools.com/",
+        image: "./images/carouselImage.png",
+        description: "Product 9"
+    },
+    {
+        link: "https://www.interactiveschools.com/",
+        image: "./images/carouselImage.png",
+        description: "Product 10"
+    },
+]
+
+

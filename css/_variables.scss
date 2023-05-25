@@ -35,10 +35,10 @@ $font-bold: bold;
     height: 100%;
 }
 
-@mixin dislayFlex {
+@mixin dislayFlex($justify: center) {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: $justify;
 }
 
 @mixin absolutePosition {
@@ -51,3 +51,4 @@ $font-bold: bold;
 
 // media queries
 $breakpoint-tablet: 991px;
+$breakpoint: 480px;

@@ -54,6 +54,20 @@ main {
   margin-bottom: 15px;
 }
 
+.py-thin {
+  padding-top: 60px;
+  padding-bottom: 60px; 
+}
+
+.subtitle {
+  font-family: $secondaryFont;
+  font-size: $fs-1;
+  line-height: 80px;
+  text-align: center;
+  color: $primary;
+  margin-top: 0;
+}
+
 @keyframes floating {
   0% {
       transform: translateY(0);
@@ -210,4 +224,66 @@ main {
     }
   }
 }
+
+// Start Carousel Scroller
+.swiper-container {
+  .swiper-wrapper {
+    display: flex;
+  }
+}
+
+.swiper-button {
+  &-next,
+  &-prev {
+    color: $black;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  @include backgroundImage;
+  background-color: $bodyColor;
+  position: relative;
+  display: flex!important;
+  align-items: end;
+  &::before {
+    content: "";
+    background-color: $secondary;
+    @include absolutePosition;
+    opacity: 0.4;
+  }
+  .content_swiper {
+    position: relative;
+    padding: 25px 30px;
+    width: 100%;
+    @include dislayFlex($justify: space-between);
+    .description {
+      opacity: 0;
+      transition: 0.4s ease 0.4s;
+      color: $bodyColor;
+      font-size: $fs-5;
+      font-family: $secondaryFont;
+    }
+    svg {
+      color: $bodyColor;
+      font-size: 35px;
+    }
+  }
+  &-active {
+    .content_swiper {
+      .description {
+        opacity: 1;
+        transition: opacity 0.4s ease 0.4s;
+      }
+    }
+  }
+}
+
+.gallery-top {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+}
+
+
 
