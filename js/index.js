@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     heroArea.initialize();
+    
+    document.querySelector('.anchor-arrow').addEventListener('click', (e) => {
+        document.querySelector('html').style.scrollBehavior = "smooth";
+        setTimeout(() => {
+            document.querySelector('html').style.scrollBehavior = "auto";
+        }, 1000)
+    })
 })
 
 // The Hero Area
@@ -24,13 +31,15 @@ let heroArea = {
         let itemsMarketing = ""
         const truncateContent = (string = '', maxLength = 70) => string.length > maxLength ? `${string.substring(0, maxLength)}…`: string
         marketingItems.forEach((item, index) => {
+            let arrowSmooth = (index === 0) ? '<a href="#map" title="Next Section" class="anchor-arrow"><i class="fa-solid fa-arrow-down-long"></i></a>' : "";
             itemsMarketing +=  `
                 <article id="panel-${index+1}" class="panel full-screen red">
-                    <div class="container">
+                    <div class="container mb-5">
                         <div class="row">
                             <div class="col-6 d-flex flex-column">
                                 <h1 class="heading-title mb-3">${truncateContent(item.title, 18)}</h2>
                                 <p class="step-description">${truncateContent(item.description)}</p>
+                                ${arrowSmooth}
                             </div>
                         </div>
                     </div>
@@ -120,7 +129,6 @@ let heroArea = {
         }
     }
 }
-
 
 
 

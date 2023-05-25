@@ -37,10 +37,31 @@ main {
   }
 }
 
+.anchor-arrow {
+  padding: 15px 0 20px 0;
+  display: inline-block;
+  animation: floating 3s ease infinite;
+}
+.anchor-arrow svg {
+  color: #ffffff;
+  height: 35px;
+}
+
 .mb-3 {
   margin-bottom: 15px;
 }
 
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 .full-screen {
   display: block;
   width: 100%;
