@@ -30,7 +30,11 @@ let heroArea = {
 
         heroArea.reportWindowSize();
 
-        window.onresize = heroArea.reportWindowSize;
+        window.addEventListener('resize', function(){
+            setTimeout(function() {
+                heroArea.reportWindowSize
+            }, 100);
+        });
     },
 
     getMarketingContent() {
@@ -215,11 +219,8 @@ let rotatorData = {
                 `
             });
 
-            if (window.innerWidth > 990) {
-                document.getElementById('insertListRotator').innerHTML = itemsList
-            } else {
-                document.getElementById('insertListRotatorMobile').innerHTML = itemsList
-            }
+            document.getElementById('insertListRotator').innerHTML = itemsList
+            document.getElementById('insertListRotatorMobile').innerHTML = itemsList
         });
     },
 }
@@ -267,23 +268,9 @@ let rotatorSlide = {
     }
 }
 
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+document.querySelector('footer').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});

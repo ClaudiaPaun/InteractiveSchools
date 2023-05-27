@@ -319,12 +319,12 @@ main {
 
 // Start Rotator
 .section_rotator {
-  .swiper-container-wrapper {
-    &.carousel-rotator {
-      @media (max-width: $breakpoint-tablet) {
-        display: none;
-      }
+  .carousel-rotator {
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
     }
+  }
+  .swiper-container-wrapper {
     .content_swiper {
       background: $bodyColor;
       padding: 0;
@@ -445,6 +445,25 @@ main {
   }
 }
 
+#insertListRotatorMobile {
+  display: none;
+  @media (max-width: $breakpoint-tablet) {
+    display: block;
+  }
+}
+
+
+// footer
+.footer {
+  background-color: $secondary;
+  padding: 25px;
+  cursor: pointer;
+  text-align: center;
+  svg {
+    font-size: $fs-5;
+    color: $bodyColor;
+  }
+}
 
 
 
