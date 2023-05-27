@@ -51,6 +51,10 @@ main {
   margin-bottom: 15px;
 }
 
+.mb-5 {
+  margin-bottom: 48px;
+}
+
 .py-thin {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -63,6 +67,21 @@ main {
   text-align: center;
   color: #B3995D;
   margin-top: 0;
+}
+@media (max-width: 480px) {
+  .subtitle {
+    font-size: 50px;
+    line-height: 55px;
+  }
+}
+
+.col-6 {
+  width: 50%;
+  display: inline-block;
+}
+
+.position-relative {
+  position: relative;
 }
 
 @keyframes floating {
@@ -85,7 +104,10 @@ main {
 
 #panels #panels-container {
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   padding: 0;
   overflow: hidden;
@@ -100,6 +122,8 @@ main {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: #000000;
   justify-content: center;
@@ -132,7 +156,11 @@ main {
 }
 #panels #panels-container .panel .panels-navigation {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 #panels #panels-container .panel .anchor-panel, #panels #panels-container .panel .nav-panel {
@@ -156,6 +184,8 @@ main {
   width: 100%;
   height: 100vh !important;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: #000000;
   justify-content: center;
@@ -212,7 +242,19 @@ main {
   height: 15px;
 }
 
-.swiper-container .swiper-wrapper {
+#map .subtitle {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+}
+#map .container-listing-carousel {
+  min-height: 550px;
+}
+
+.swiper-container-wrapper {
+  position: relative;
+}
+.swiper-container-wrapper .swiper-container .swiper-wrapper {
   display: flex;
 }
 
@@ -268,4 +310,109 @@ main {
   position: relative;
   width: 100%;
   height: 65vh;
+}
+
+.section_rotator .content_swiper {
+  background: #ffffff;
+  padding: 0;
+}
+.section_rotator .content_swiper .description {
+  color: #000000;
+}
+.section_rotator .content_swiper img {
+  object-fit: contain;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  max-height: 350px;
+}
+.section_rotator .content_swiper .img_item-products {
+  position: relative;
+}
+.section_rotator .content_swiper .img_item-products:before {
+  content: "";
+  background-color: #002664;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
+}
+.section_rotator .content_swiper .img_item-products .description_products {
+  position: absolute;
+  bottom: 20px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 40px;
+  font-family: "CordaleCorp", Arial, sans-serif;
+}
+.section_rotator .content_swiper .img_item-products .description_products span {
+  padding-left: 25px;
+}
+.section_rotator .content_swiper .img_item-products .description_products a {
+  padding-right: 25px;
+}
+.section_rotator .content_swiper .box-description .description-item {
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #9A9B9C;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.4s;
+}
+.section_rotator .swiper-slide-active .box-description .description-item {
+  opacity: 1;
+  transition: opacity 0.3s ease 0.4s;
+}
+.section_rotator #insertListCounter {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 22%;
+}
+.section_rotator #insertListCounter .counter-slider {
+  border-top: 1px solid #B3995D;
+  display: inline-block;
+}
+.section_rotator #insertListCounter .counter-slider > span {
+  font-size: 75px;
+  font-style: italic;
+  color: #002664;
+}
+.section_rotator #insertListCounter .counter-slider sub {
+  vertical-align: -12px;
+}
+.section_rotator #insertListCounter .counter-slider sub span {
+  font-size: 28px;
+  font-style: italic;
+  color: #002664;
+}
+.section_rotator #insertListCounter .counter-slider sub span:first-child {
+  color: #B3995D;
+  font-size: 37px;
+}
+.section_rotator .swiper-pagination.swiper-pagination-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  width: auto;
+}
+.section_rotator .swiper-pagination.swiper-pagination-horizontal .swiper-pagination-bullet {
+  display: block;
+  margin: 5px 0;
+  padding: 3px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #ffffff;
+  background-clip: content-box !important;
+  background-color: #9A9B9C !important;
+}
+.section_rotator .swiper-pagination.swiper-pagination-horizontal .swiper-pagination-bullet-active {
+  border: 2px solid #000000;
+  background-color: #000000 !important;
 }/*# sourceMappingURL=style.css.map */

@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     simpleListCarousel.initialize();
 
     swiperSlide.initialize();
+
+    rotatorSlide.initialize();
+
+    rotatorData.initialize();
 })
 
 // The Hero Area
@@ -40,7 +44,7 @@ let heroArea = {
                 <article id="panel-${index+1}" class="panel full-screen red">
                     <div class="container mb-5">
                         <div class="row">
-                            <div class="col-6 d-flex flex-column">
+                            <div>
                                 <h1 class="heading-title mb-3">${truncateContent(item.title, 18)}</h2>
                                 <p class="step-description">${truncateContent(item.description)}</p>
                                 ${arrowSmooth}
@@ -178,6 +182,87 @@ let swiperSlide = {
         });
     },
 }
+
+
+let rotatorData = {
+    initialize() {
+        rotatorData.getRotatorData();
+    },
+
+    getRotatorData() {
+        let itemsList = ""
+        fetch('https://dummyjson.com/products')
+        .then(res => res.json())
+        .then(response => {
+            const slicedProducts = response.products.slice(0, 4);
+            const truncateContent = (string = '', maxLength = 40) => string.length > maxLength ? `${string.substring(0, maxLength)}…`: string
+            slicedProducts.forEach((item, index) => {
+                itemsList +=  `
+                    <div class="swiper-slide">
+                        <div class="content_swiper">
+                            <div class="col-6 box-description">
+                                <div class="description-item">${truncateContent(item.description, 35)}</div>
+                            </div> 
+                            <div class="col-6 position-relative img_item-products">
+                                <div class="description_products">
+                                    <span>${item.title}</span>
+                                    <a href="https://www.interactiveschools.com/" title="icon" target="_black"><i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                                <img src="${item.images[0]}" title="" loading="lazy"/>
+                            </div>
+                        </div>
+                    </div>
+                `
+            });
+
+            document.getElementById('insertListRotator').innerHTML = itemsList
+        });
+    },
+}
+
+let rotatorSlide = {
+    initialize() {
+        rotatorSlide.initRotatorSlide();
+    },
+
+    initRotatorSlide() {
+        var carouselRotator = new Swiper(".carousel-rotator", {
+            direction: "horizontal",
+            effect: 'fade',
+            fadeEffect: {
+              crossFade: true
+            },
+            spaceBetween: 10,
+            autoplay: {
+                delay: 3500,
+              },
+            keyboard: {
+              enabled: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+        carouselRotator.on('slideChange', rotatorSlide.initCounter);
+        carouselRotator.on('slidesGridLengthChange', rotatorSlide.initCounter);
+        carouselRotator.on("transitionStart", function () {
+            carouselRotator.slideTo(carouselRotator.activeIndex);
+        });
+    },
+
+    initCounter(swiper) {
+        let counterElements = ""
+        counterElements +=  `
+            <div class="counter-slider">
+                <span>${swiper.activeIndex+1}</span> 
+                <sub><span>/</span> <span>${swiper.slides.length}</span></sub>
+            </div>
+        `
+        document.getElementById('insertListCounter').innerHTML = counterElements
+    }
+}
+
 
 
 
