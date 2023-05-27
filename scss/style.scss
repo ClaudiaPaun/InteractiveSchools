@@ -319,63 +319,77 @@ main {
 
 // Start Rotator
 .section_rotator {
-  .content_swiper {
-    background: $bodyColor;
-    padding: 0;
-    .description {
-      color: $black;
-    }
-    img  {
-      object-fit: contain;
-      object-position: center center;
-      @include setWH;
-      min-height: 350px;
-      max-height: 350px;
-    }
-    .img_item-products {
-      position: relative;
-      &:before {
-        content: "";
-        background-color: #002664;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0.3;
+  .swiper-container-wrapper {
+    &.carousel-rotator {
+      @media (max-width: $breakpoint-tablet) {
+        display: none;
       }
-      .description_products {
-        position: absolute;
-        bottom: 20px;
-        color: $bodyColor;
-        @include dislayFlex($justify: space-between);
-        width: 100%;
-        font-size: $fs-4;
-        font-family: $secondaryFont;
-        span {
-          padding-left: 25px;
+    }
+    .content_swiper {
+      background: $bodyColor;
+      padding: 0;
+      .description {
+        color: $black;
+      }
+      img  {
+        object-fit: contain;
+        object-position: center center;
+        @include setWH;
+        min-height: 350px;
+        max-height: 350px;
+      }
+      .img_item-products {
+        position: relative;
+        @media (max-width: $breakpoint-tablet) {
+          width: 100%;
+          margin-bottom: 25px;
         }
-        a {
-          padding-right: 25px;
+        &:before {
+          content: "";
+          background-color: #002664;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          opacity: 0.3;
+        }
+        .description_products {
+          position: absolute;
+          bottom: 20px;
+          color: $bodyColor;
+          @include dislayFlex($justify: space-between);
+          width: 100%;
+          font-size: $fs-4;
+          font-family: $secondaryFont;
+          span {
+            padding-left: 25px;
+          }
+          a {
+            padding-right: 25px;
+          }
+        }
+      }
+      .box-description {
+        @media (max-width: $breakpoint-tablet) {
+          display: none;
+        }
+        .description-item {
+          font-size: $display-1;
+          line-height: 26px;
+          text-align: center;
+          color: $light;
+          opacity: 0;
+          transition: opacity 0.3s ease 0.4s;
         }
       }
     }
-    .box-description {
-      .description-item {
-        font-size: $display-1;
-        line-height: 26px;
-        text-align: center;
-        color: $light;
-        opacity: 0;
-        transition: opacity 0.3s ease 0.4s;
-      }
-    }
-  }
-  .swiper-slide-active {
-    .box-description {
-      .description-item {
-        opacity: 1;
-        transition: opacity 0.3s ease 0.4s;
+    .swiper-slide-active {
+      .box-description {
+        .description-item {
+          opacity: 1;
+          transition: opacity 0.3s ease 0.4s;
+        }
       }
     }
   }

@@ -215,7 +215,11 @@ let rotatorData = {
                 `
             });
 
-            document.getElementById('insertListRotator').innerHTML = itemsList
+            if (window.innerWidth > 990) {
+                document.getElementById('insertListRotator').innerHTML = itemsList
+            } else {
+                document.getElementById('insertListRotatorMobile').innerHTML = itemsList
+            }
         });
     },
 }
